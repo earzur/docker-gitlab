@@ -65,6 +65,11 @@ file_env 'GITLAB_UPLOADS_OBJECT_STORE_CONNECTION_AWS_SECRET_ACCESS_KEY'
 
 source ${GITLAB_RUNTIME_DIR}/functions
 
+# make sure gitlab can read the registry key
+if [[ -n ${GITLAB_REGISTRY_KEY_PATH} && -f ${GITLAB_REGISTRY_KEY_PATH} ]]; then
+  chown gitlab ${GITLAB_REGISTRY_KEY_PATH}
+fi
+
 [[ $DEBUG == true ]] && set -x
 
 case ${1} in
