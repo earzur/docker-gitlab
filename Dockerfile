@@ -1,5 +1,5 @@
 FROM sameersbn/ubuntu:16.04.20180706
-LABEL maintainer="Erwan Arzur <earzur@gmail.com>"
+LABEL maintainer="Erwan Arzur <erwan@privowny.com>"
 
 ENV GITLAB_VERSION=11.0.3 \
     RUBY_VERSION=2.4 \
